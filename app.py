@@ -10,7 +10,7 @@ import api.model.user
 from api.database import db, migrate
 from api.login import login_manager
 
-cors = CORS(origins="*")
+cors = CORS(origins="http://localhost:8080", supports_credentials=True)
 
 
 def create_app():
