@@ -4,14 +4,8 @@
     <primary-button type="submit">Logout</primary-button>
   </form>
   <form @submit="login($event)" v-else>
-    <label class="input-container">
-      <div class="input-label">Email</div>
-      <input v-model="email" type="email" />
-    </label>
-    <label class="input-container">
-      <div class="input-label">Password</div>
-      <input v-model="password" type="password" />
-    </label>
+    <text-input type="email" label="Email" v-model="email" />
+    <text-input type="password" label="Password" v-model="password" />
     <label class="input-container">
       <input v-model="remember" type="checkbox" />
       <div class="input-label">Remember me</div>
@@ -21,13 +15,15 @@
 </template>
 
 <script>
-import PrimaryButton from "../components/primary-button"
 import { mapGetters } from "vuex"
+import PrimaryButton from "../components/primary-button"
+import TextInput from "../components/text-input"
 
 export default {
   name: "auth",
   components: {
     PrimaryButton,
+    TextInput,
   },
   data() {
     return {

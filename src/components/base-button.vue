@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Clickable from "./clickable.vue"
+import Clickable from "./clickable"
 
 export default {
   name: "base-button",
@@ -31,7 +31,7 @@ export default {
   font-weight: 600;
   white-space: nowrap;
 
-  transition: 167ms;
+  transition: 150ms;
   transition-property: background-color, border-color, color;
 }
 </style>

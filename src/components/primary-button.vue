@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BaseButton from "./base-button.vue"
+import BaseButton from "./base-button"
 
 export default {
   name: "primary-button",
