@@ -9,18 +9,31 @@ export const request = async (url, data = undefined, headers = {}) => {
     requestHeaders.set(name, value)
   }
 
-  const response = await fetch(`http://localhost:5000${path}`, {
-    method,
-    body: JSON.stringify(data),
-    headers: requestHeaders,
-    credentials: "include",
-  })
+  let response
+  try {
+    response = await fetch(`http://localhost:5000${path}`, {
+      method,
+      body: JSON.stringify(data),
+      headers: requestHeaders,
+      credentials: "include",
+    })
+  } catch (error) {
+    console.error("Could not request API:", error)
+    return {
+      ok: false,
+      status: 0,
+      headers: new Headers(),
+      data: undefined,
+    }
+  }
 
   let responseData = undefined
-  if (response.ok) {
-    const json = await response.text()
-    if (json) {
-      responseData = JSON.parse(json)
+  const rawResponseData = await response.text()
+  if (rawResponseData) {
+    try {
+      responseData = JSON.parse(rawResponseData)
+    } catch (error) {
+      responseData = rawResponseData
     }
   }
 
