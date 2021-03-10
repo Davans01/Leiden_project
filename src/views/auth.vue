@@ -2,7 +2,6 @@
   <h1>login</h1>
   <form @submit="logout($event)" v-if="isLoggedIn">
     <primary-button type="submit">Logout</primary-button>
-    <secondary-button type="submit">Logout</secondary-button>
   </form>
   <form @submit="login($event)" v-else>
     <label class="input-container">
@@ -23,14 +22,12 @@
 
 <script>
 import PrimaryButton from "../components/primary-button"
-import SecondaryButton from "../components/secondary-button"
 import { mapGetters } from "vuex"
 
 export default {
   name: "auth",
   components: {
     PrimaryButton,
-    SecondaryButton,
   },
   data() {
     return {
