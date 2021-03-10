@@ -1,0 +1,23 @@
+@import "./vars.scss";
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: $background-primary;
+  color: $text-normal;
+
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-primary;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
