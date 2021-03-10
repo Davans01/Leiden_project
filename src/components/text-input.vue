@@ -1,7 +1,7 @@
 <template>
   <div class="text-input" :class="$attrs.class" :style="$attrs.style">
     <div class="label">
-      <label :for="$attrs.id || id"></label>
+      <label :for="$attrs.id || id">{{ label }}</label>
     </div>
     <input
       class="input"
@@ -20,6 +20,7 @@ import { getId } from "../uid"
 export default {
   name: "text-input",
   props: {
+    label: String,
     modelValue: String,
   },
   computed: {
