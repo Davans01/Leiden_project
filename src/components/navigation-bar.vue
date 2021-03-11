@@ -4,7 +4,7 @@
       <router-link class="link" to="/">home</router-link> |
       <router-link class="link" to="/debug">debug</router-link> |
       <router-link class="link" to="/about">about</router-link> |
-      <router-link class="link" to="/auth">auth</router-link>
+      <router-link class="link" to="/login">login</router-link>
     </nav>
   </div>
 </template>

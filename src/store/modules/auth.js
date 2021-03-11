@@ -7,7 +7,7 @@ export const auth = {
     }
   },
   getters: {
-    isLoggedIn(state) {
+    isAuthenticated(state) {
       return state.user !== null
     },
   },
