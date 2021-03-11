@@ -9,6 +9,9 @@
       <text-input type="password" label="Password" v-model="password" />
       <checkbox label="Remember me" v-model="remember" />
       <primary-button type="submit">Login</primary-button>
+      <router-link to="/auth/register" custom v-slot="{ navigate }">
+        <primary-button @click="navigate">Register</primary-button>
+      </router-link>
     </form>
   </page-wrapper>
 </template>

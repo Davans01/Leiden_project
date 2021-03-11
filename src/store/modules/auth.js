@@ -36,12 +36,13 @@ export const auth = {
     },
 
     async register(context, requestData) {
-      const { ok } = await request("POST /auth/login", requestData)
+      const { ok } = await request("POST /auth/register", requestData)
 
       if (ok) {
         context.dispatch("login", {
           email: requestData.email,
           password: requestData.password,
+          remember: false,
         })
       }
     },

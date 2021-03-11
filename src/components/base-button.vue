@@ -23,6 +23,7 @@ export default {
   min-height: 36px;
   max-height: 36px;
 
+  margin-top: 8px;
   padding: 0 14px;
   border: 2px solid transparent;
 

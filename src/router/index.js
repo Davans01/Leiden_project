@@ -14,12 +14,17 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () => import("../views/about.vue"),
+    component: () => import("../views/about"),
   },
   {
     path: "/auth",
     name: "auth",
-    component: () => import("../views/auth.vue"),
+    component: () => import("../views/auth"),
+  },
+  {
+    path: "/auth/register",
+    name: "register",
+    component: () => import("../views/register"),
   },
 ]
 
