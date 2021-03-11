@@ -52,6 +52,7 @@ export default {
 .checkbox {
   display: flex;
   align-items: center;
+  margin-top: 8px;
   height: 32px;
   user-select: none;
 }

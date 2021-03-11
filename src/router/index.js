@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
+import { store } from "../store"
 
 const routes = [
   {
@@ -14,16 +15,26 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () => import("../views/about.vue"),
+    component: () => import("../views/about"),
   },
   {
-    path: "/auth",
-    name: "auth",
-    component: () => import("../views/auth.vue"),
+    path: "/login",
+    name: "login",
+    component: () => import("../views/login"),
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: () => import("../views/logout"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("../views/register"),
   },
 ]
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   linkActiveClass: "active",
@@ -31,4 +42,44 @@ const router = createRouter({
   linkExactPathActiveClass: "active-exact-path",
 })
 
-export default router
+// these routes are only accessible when the user is not authenticated
+// others are only accessible when the user is authenticated
+const unauthenticatedRoutes = ["login", "register"]
+
+router.beforeEach((to, from, next) => {
+  const { isAuthenticated } = store.getters
+
+  if (to.name === "debug") {
+    next()
+    return
+  }
+
+  if (unauthenticatedRoutes.includes(to.name) && isAuthenticated) {
+    next({
+      name: "logout",
+      query: {
+        next: to.fullPath,
+      },
+    })
+    return
+  }
+
+  if (!unauthenticatedRoutes.includes(to.name) && !isAuthenticated) {
+    next({
+      name: "login",
+      query: {
+        next: to.fullPath,
+      },
+    })
+    return
+  }
+
+  next()
+})
+
+store.watch(
+  (state, getters) => getters.isAuthenticated,
+  () => {
+    router.push(router.currentRoute.value.query.next || { name: "home" })
+  },
+)

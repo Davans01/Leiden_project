@@ -1,7 +1,7 @@
 import { createApp } from "vue"
 import App from "./app.vue"
 import { request } from "./request"
-import router from "./router"
+import { router } from "./router"
 import { store } from "./store"
 
 export const app = createApp(App)

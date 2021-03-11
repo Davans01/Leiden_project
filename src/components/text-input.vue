@@ -42,6 +42,7 @@ export default {
 @import "../vars.scss";
 
 .text-input {
+  margin-top: 8px;
   min-width: 0;
   display: flex;
   flex-direction: column;

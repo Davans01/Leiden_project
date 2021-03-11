@@ -1,16 +1,22 @@
 <template>
-  <h1>debug</h1>
-  api status:
-  <pre>{{ status }}</pre>
-  store state:
-  <pre>{{ state }}</pre>
+  <page-wrapper>
+    <h1>debug</h1>
+    api status:
+    <pre>{{ status }}</pre>
+    store state:
+    <pre>{{ state }}</pre>
+  </page-wrapper>
 </template>
 
 <script>
 import { request } from "../request"
+import PageWrapper from "../components/page-wrapper"
 
 export default {
   name: "debug",
+  components: {
+    PageWrapper,
+  },
   data() {
     return {
       status: "unknown",
