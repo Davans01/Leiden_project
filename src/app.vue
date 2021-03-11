@@ -1,12 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">home</router-link> |
-    <router-link to="/debug">debug</router-link> |
-    <router-link to="/about">about</router-link> |
-    <router-link to="/auth">auth</router-link>
-  </div>
+  <navigation-bar />
   <router-view />
 </template>
+
+<script>
+import NavigationBar from "./components/navigation-bar"
+
+export default {
+  name: "app",
+  components: {
+    NavigationBar,
+  },
+}
+</script>
 
 <style lang="scss">
 @import "./global.scss";
