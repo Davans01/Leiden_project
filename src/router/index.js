@@ -1,10 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import { store } from "../store"
 
-// these routes are only accessible when the user is not authenticated
-// others are only accessible when the user is authenticated
-const unauthenticatedRoutes = ["login", "register"]
-
 const routes = [
   {
     path: "/",
@@ -38,13 +34,17 @@ const routes = [
   },
 ]
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   linkActiveClass: "active",
   linkExactActiveClass: "active-exact",
   linkExactPathActiveClass: "active-exact-path",
 })
+
+// these routes are only accessible when the user is not authenticated
+// others are only accessible when the user is authenticated
+const unauthenticatedRoutes = ["login", "register"]
 
 router.beforeEach((to, from, next) => {
   const { isAuthenticated } = store.getters
@@ -77,4 +77,9 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-export default router
+store.watch(
+  (state, getters) => getters.isAuthenticated,
+  () => {
+    router.push(router.currentRoute.value.query.next || { name: "home" })
+  },
+)
