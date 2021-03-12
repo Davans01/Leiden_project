@@ -6,6 +6,9 @@ from flask_cors import CORS
 
 import api.bp.auth
 import api.bp.status
+import api.model.device
+import api.model.measure_type
+import api.model.measurement
 import api.model.user
 from api.database import db, migrate
 from api.login import login_manager
