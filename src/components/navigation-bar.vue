@@ -4,22 +4,18 @@
         <router-link to="/"> <img :src="require('/img/logo.png')"/></router-link>
     </div>
       <nav class="items">
-           <!-- <div v-if="isAuthenticated">
-      <h1></h1>
-</div>
-<div v-else>
-  <h1>TEST_342323</h1>
-</div> -->
         <ul><li><router-link class="link" to="/">home</router-link></li></ul>
         <ul><li><router-link class="link" to="/debug">debug</router-link></li></ul>
         <ul><li><router-link class="link" to="/about">about</router-link></li></ul>
         <ul><li><router-link class="link" to="/auth">auth</router-link></li></ul>
-        <div v-if="isAuthenticated">
-        <ul><li><router-link class="link" to="/logout">logout</router-link></li></ul>
-        </div>
-        <div v-else>
-        <ul><li><router-link class="link" to="/login">login</router-link></li></ul>
-        <ul><li><router-link class="link" to="/register">register</router-link></li></ul>
+        <div class="placement-login">
+          <div v-if="isAuthenticated">
+          <ul><li><router-link class="link" to="/logout">logout</router-link></li></ul>
+          </div>
+          <div v-else>
+          <ul><li><router-link class="link" to="/login">login</router-link></li></ul>
+          <ul><li><router-link class="link" to="/register">register</router-link></li></ul>
+          </div>
         </div>
       </nav>
   </div>
@@ -93,6 +89,9 @@ nav{
 
         }
       }
+    }
+    .placement-login{
+      float: right;
     }
 }
 
