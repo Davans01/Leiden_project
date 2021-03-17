@@ -7,7 +7,7 @@ class Device(db.Model):
     user_id = db.Column(db.Integer(), db.ForeignKey("user.id"))
     user = db.relation("User", back_populates="devices")
 
-    def serialize(self):
+    def to_dict(self):
         return {
             "serial": self.serial,
             "pairing_code": self.pairing_code,

@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(), nullable=False)
     devices = db.relationship("Device", back_populates="user")
 
-    def serialize(self):
+    def to_dict(self):
         return {
             "id": self.id,
             "email": self.email,
