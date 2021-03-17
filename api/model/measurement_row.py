@@ -2,7 +2,9 @@ from api.database import db
 
 
 class MeasurementRow(db.Model):
-    measurement_id = db.Column(db.Integer(), primary_key=True)
+    measurement_id = db.Column(
+        db.Integer(), db.ForeignKey("measurement.id"), primary_key=True
+    )
     measurement = db.relationship("Measurement", back_populates="rows")
     type_id = db.Column(
         db.Integer(), db.ForeignKey("measure_type.id"), primary_key=True
