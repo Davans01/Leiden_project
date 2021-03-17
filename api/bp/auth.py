@@ -21,7 +21,7 @@ def login():
 
     login_user(user, remember=remember)
 
-    return user.serialize()
+    return user.to_dict()
 
 
 @blueprint.route("/auth/logout", methods=["POST"])
@@ -35,7 +35,7 @@ def logout():
 @blueprint.route("/auth/me")
 @login_required
 def me():
-    return current_user.serialize()
+    return current_user.to_dict()
 
 
 @blueprint.route("/auth/register", methods=["POST"])
@@ -60,4 +60,4 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    return user.serialize()
+    return user.to_dict()

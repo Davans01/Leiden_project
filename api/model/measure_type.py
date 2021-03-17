@@ -8,7 +8,7 @@ class MeasureType(db.Model):
     unit_symbol = db.Column(db.String(), nullable=False)
     unit_name = db.Column(db.String(), nullable=False)
 
-    def serialize(self):
+    def to_dict(self):
         return {
             "id": self.id,
             "dimension_symbol": self.dimension_symbol,

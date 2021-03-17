@@ -3,13 +3,11 @@ from api.database import db
 
 class Measurement(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    value = db.Column(db.Float(), nullable=False)
-    type_id = db.Column(db.Integer(), db.ForeignKey("measure_type.id"), nullable=False)
-    type = db.relationship("MeasureType")
     device = db.Column(db.String(), db.ForeignKey("device.serial"), nullable=False)
+    rows = db.relationship("MeasurementRow", back_populates="measurement")
 
-    def serialize(self):
+    def to_dict(self):
         return {
-            "value": self.value,
-            "type": self.measure_type.serialize(),
+            "device": self.device.to_dict(),
+            "rows": [row.to_dict() for row in self.rows],
         }

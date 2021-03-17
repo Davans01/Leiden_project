@@ -9,6 +9,7 @@ import api.bp.status
 import api.model.device
 import api.model.measure_type
 import api.model.measurement
+import api.model.measurement_row
 import api.model.user
 from api.database import db, migrate
 from api.login import login_manager
