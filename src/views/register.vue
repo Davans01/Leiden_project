@@ -7,12 +7,15 @@
       <primary-button type="submit">Register</primary-button>
     </form>
   </page-wrapper>
+  <page-footer></page-footer>
 </template>
 
 <script>
 import PrimaryButton from "../components/primary-button"
 import TextInput from "../components/text-input"
 import PageWrapper from "../components/page-wrapper"
+import PageFooter from "../components/page-footer"
+
 
 export default {
   name: "register",
@@ -20,6 +23,7 @@ export default {
     PrimaryButton,
     TextInput,
     PageWrapper,
+    PageFooter,
   },
   data() {
     return {

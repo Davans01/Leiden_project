@@ -18,6 +18,7 @@
       </router-link>
     </form>
   </page-wrapper>
+  <page-footer></page-footer>
 </template>
 
 <script>
@@ -26,6 +27,7 @@ import PrimaryButton from "../components/primary-button"
 import TextInput from "../components/text-input"
 import PageWrapper from "../components/page-wrapper"
 import Notice from "../components/notice.vue"
+import PageFooter from "../components/page-footer"
 
 export default {
   name: "auth",
@@ -35,6 +37,7 @@ export default {
     TextInput,
     PageWrapper,
     Notice,
+    PageFooter,
   },
   data() {
     return {
