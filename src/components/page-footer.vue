@@ -71,8 +71,7 @@ export default {
 
             .full-row{
                 margin: 0 auto;
-                max-width: 1080px;
-                padding: 0 35px;
+                max-width: 960px;
                 .blocks-container{
 
                     .block-group{
@@ -127,8 +126,7 @@ export default {
 
             .full-row{
                 margin: 0 auto;
-                max-width: 1080px;
-                padding: 0 35px;
+                max-width: 960px;
                 .blocks-container{
 
                     .block{
