@@ -5,6 +5,7 @@ from flask import Flask
 from flask_cors import CORS
 
 import api.bp.auth
+import api.bp.devices
 import api.bp.status
 import api.model.device
 import api.model.measure_type
@@ -33,6 +34,7 @@ def create_app():
     login_manager.init_app(app)
 
     app.register_blueprint(api.bp.auth.blueprint)
+    app.register_blueprint(api.bp.devices.blueprint)
     app.register_blueprint(api.bp.status.blueprint)
 
     return app

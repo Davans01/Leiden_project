@@ -6,6 +6,7 @@ class Device(db.Model):
     pairing_code = db.Column(db.String(), nullable=False, unique=True)
     user_id = db.Column(db.Integer(), db.ForeignKey("user.id"))
     user = db.relation("User", back_populates="devices")
+    measurements = db.relationship("Measurement", back_populates="device")
 
     def to_dict(self):
         return {

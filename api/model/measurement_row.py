@@ -9,11 +9,11 @@ class MeasurementRow(db.Model):
     type_id = db.Column(
         db.Integer(), db.ForeignKey("measure_type.id"), primary_key=True
     )
-    value = db.Column(db.Float(), nullable=False)
     type = db.relationship("MeasureType")
+    value = db.Column(db.Float(), nullable=False)
 
     def to_dict(self):
         return {
             "value": self.value,
-            "type": self.measure_type.to_dict(),
+            "type": self.type_id,
         }
