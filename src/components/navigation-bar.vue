@@ -16,7 +16,7 @@
         <li class="item">
           <router-link class="link" to="/about">about</router-link>
         </li>
-        <li class="item" v-if="isAuthenticated">
+        <li class="item" v-if="!isAuthenticated">
           <router-link class="link" to="/login">login</router-link>
         </li>
         <li class="item" v-else>
