@@ -32,6 +32,11 @@ const routes = [
     name: "register",
     component: () => import("../views/register"),
   },
+  {
+    path: "/devices",
+    name: "devices",
+    component: () => import("../views/devices"),
+  },
 ]
 
 export const router = createRouter({

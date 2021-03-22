@@ -2,7 +2,7 @@
   <page-wrapper>
     <h1>about</h1>
   </page-wrapper>
-    <page-footer></page-footer>
+  <page-footer></page-footer>
 </template>
 
 <script>
