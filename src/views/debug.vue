@@ -1,24 +1,28 @@
 <template>
   <page-wrapper>
     <h1>debug</h1>
+    test chart:
+    <chart></chart>
     api status:
     <pre>{{ status }}</pre>
     store state:
     <pre>{{ state }}</pre>
   </page-wrapper>
-    <page-footer></page-footer>
+  <page-footer></page-footer>
 </template>
 
 <script>
 import { request } from "../request"
 import PageWrapper from "../components/page-wrapper"
 import PageFooter from "../components/page-footer"
+import Chart from "../components/chart.vue"
 
 export default {
   name: "debug",
   components: {
     PageWrapper,
     PageFooter,
+    Chart,
   },
   data() {
     return {
