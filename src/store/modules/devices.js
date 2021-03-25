@@ -40,13 +40,13 @@ export const devices = {
     },
 
     async registerDevice(context, requestData) {
-      const { ok, data } = await request("POST /devices", requestData)
+      const response = await request("POST /devices", requestData)
 
-      if (ok) {
-        context.commit("addDevice", data)
+      if (response.ok) {
+        context.commit("addDevice", response.data)
       }
 
-      return data
+      return response
     },
   },
 }

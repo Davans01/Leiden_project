@@ -46,10 +46,12 @@ export default {
   methods: {
     async registerDevice(event) {
       event.preventDefault()
-      const data = await this.$store.dispatch("registerDevice", {
+      const { ok, data } = await this.$store.dispatch("registerDevice", {
         pairingCode: this.pairingCode,
       })
-      if (data) {
+      if (ok) {
+        this.$router.push({ name: "devices" })
+      } else {
         this.error = data.error
       }
     },
