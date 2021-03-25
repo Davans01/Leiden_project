@@ -37,6 +37,11 @@ const routes = [
     name: "devices",
     component: () => import("../views/devices"),
   },
+  {
+    path: "/devices/register",
+    name: "register-devices",
+    component: () => import("../views/register-device"),
+  },
 ]
 
 export const router = createRouter({

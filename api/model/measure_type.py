@@ -11,8 +11,8 @@ class MeasureType(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "dimension_symbol": self.dimension_symbol,
-            "dimension_name": self.dimension_name,
-            "unit_symbol": self.unit_symbol,
-            "unit_name": self.unit_name,
+            "dimensionSymbol": self.dimension_symbol,
+            "dimensionName": self.dimension_name,
+            "unitSymbol": self.unit_symbol,
+            "unitName": self.unit_name,
         }

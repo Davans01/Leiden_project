@@ -35,8 +35,8 @@ def get_device(device_serial):
 def register_device():
     data = request.get_json()
 
-    device = Device.query.get(data["serial"])
-    if not device or device.pairing_code != data["pairing_code"]:
+    device = Device.query.filter_by(pairing_code=data["pairingCode"]).first()
+    if not device or device.user_id:
         return {"error": "DEVICE_NOT_FOUND"}, 404
 
     device.user = current_user

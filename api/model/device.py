@@ -11,5 +11,5 @@ class Device(db.Model):
     def to_dict(self):
         return {
             "serial": self.serial,
-            "pairing_code": self.pairing_code,
+            "pairingCode": self.pairing_code,
         }

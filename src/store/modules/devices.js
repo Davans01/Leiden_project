@@ -13,7 +13,7 @@ export const devices = {
     },
 
     addDevice(state, device) {
-      state.devices.push(device)
+      if (state.devices) state.devices.push(device)
     },
 
     setMeasurements(state, device, measurements) {
@@ -39,12 +39,14 @@ export const devices = {
       }
     },
 
-    async registerDevice(context, serial, pairingCode) {
-      const { data } = await request("POST /devices", { serial, pairingCode })
+    async registerDevice(context, requestData) {
+      const { ok, data } = await request("POST /devices", requestData)
 
-      if (data) {
+      if (ok) {
         context.commit("addDevice", data)
       }
+
+      return data
     },
   },
 }
