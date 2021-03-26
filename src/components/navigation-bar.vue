@@ -46,6 +46,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../vars.scss";
+
 .container {
   width: 100%;
   height: 84px;
@@ -81,11 +83,11 @@ export default {
   transition: 0.2s;
 
   &:hover {
-    border-bottom-color: #6a8d00;
+    border-bottom-color: $accent;
   }
 
   &.active {
-    color: #6a8d00;
+    color: $accent;
   }
 }
 </style>

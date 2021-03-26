@@ -16,8 +16,8 @@ export const devices = {
       if (state.devices) state.devices.push(device)
     },
 
-    setMeasurements(state, device, measurements) {
-      state.measurements[device] = measurements
+    setMeasurements(state, data) {
+      state.measurements[data.device] = data.measurements
     },
   },
   actions: {
@@ -31,11 +31,14 @@ export const devices = {
 
     async fetchMeasurements(context, device) {
       const { data } = await request(
-        `POST /devices/${encodeURIComponent(device)}/measurements`,
+        `GET /devices/${encodeURIComponent(device)}/measurements`,
       )
 
       if (data) {
-        context.commit("setMeasurements", device, data.measurements)
+        context.commit("setMeasurements", {
+          device,
+          measurements: data.measurements,
+        })
       }
     },
 

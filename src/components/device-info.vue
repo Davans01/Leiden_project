@@ -1,8 +1,13 @@
-
 <template>
-  <div class="device">
-    {{ device.serial }}
-  </div>
+  <router-link
+    :to="{ name: 'device-stats', params: { deviceId: $props.deviceId } }"
+    custom
+    v-slot="{ navigate }"
+  >
+    <div class="device" @click="navigate">
+      {{ device.serial }}
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -12,11 +17,12 @@ export default {
   name: "device-info",
   computed: {
     ...mapState({
-      devices: (state) => state.devices.devices,
+      device(state) {
+        return state.devices.devices.find(
+          (device) => device.serial === this.deviceId,
+        )
+      },
     }),
-    device() {
-      return this.devices.find((device) => device.serial === this.deviceId)
-    },
   },
   props: {
     deviceId: String,

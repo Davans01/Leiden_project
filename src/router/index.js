@@ -39,8 +39,13 @@ const routes = [
   },
   {
     path: "/devices/register",
-    name: "register-devices",
+    name: "register-device",
     component: () => import("../views/register-device"),
+  },
+  {
+    path: "/devices/@:deviceId",
+    name: "device-stats",
+    component: () => import("../views/device-stats"),
   },
 ]
 
