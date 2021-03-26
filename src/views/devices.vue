@@ -1,11 +1,13 @@
 <template>
   <page-wrapper>
     <h1>Devices</h1>
-    <ul v-if="devices">
-      <li v-for="device of devices" :key="device.serial">
-        {{ device.serial }}
-      </li>
-    </ul>
+    <div class="device-list">
+      <device-info
+        v-for="device of devices || []"
+        :key="device.serial"
+        :deviceId="device.serial"
+      ></device-info>
+    </div>
     <router-link to="/devices/register" custom v-slot="{ navigate }">
       <primary-button @click="navigate">Register Device</primary-button>
     </router-link>
@@ -18,6 +20,7 @@ import { mapState } from "vuex"
 import PageWrapper from "../components/page-wrapper"
 import PageFooter from "../components/page-footer"
 import PrimaryButton from "../components/primary-button.vue"
+import DeviceInfo from "../components/device-info.vue"
 
 export default {
   name: "devices",
@@ -25,6 +28,7 @@ export default {
     PageWrapper,
     PageFooter,
     PrimaryButton,
+    DeviceInfo,
   },
   computed: {
     ...mapState({
