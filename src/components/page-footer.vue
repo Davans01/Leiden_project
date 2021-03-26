@@ -1,141 +1,91 @@
 <template>
-  <footer id="main-footer">
-    <div class="row top footer">
-      <div class="full-row">
-        <div class="blocks-container">
-          <div class="block-group content">
-            <div class="block left">
-              <h2>Universal Greenfields, meesters in groen.</h2>
-            </div>
-
-            <div class="block right">
-              <div class="inner-block title">
-                <h4>Universal Greenfields</h4>
-                <p>&nbsp;</p>
-              </div>
-
-              <div class="inner-block text">
-                <p>1e Mientlaan 11</p>
-                <p>2223LG Katwijk</p>
-                <p>&nbsp;</p>
-                <p>Telefoon: 071-3646111</p>
-                <p>Website: www.universalgreenfields.nl</p>
-                <p>Email: info@universalgreenfields.nl</p>
-                <p>KvK Leiden 281.05.541</p>
-              </div>
-            </div>
-          </div>
+  <footer>
+    <page-wrapper class="section">
+      <div class="content">
+        <h2>Universal Greenfields, meesters in groen.</h2>
+        <div class="contact">
+          <p>
+            Universal Greenfields
+            <br />
+            1e Mientlaan 11
+            <br />
+            2223&nbsp;LG&nbsp;&nbsp;Katwijk
+          </p>
+          <p>
+            Tel: <a href="tel:31713646111">+31 79 3646111</a>
+            <br />
+            Web:
+            <a href="https://universalgreenfields.nl/" rel="noopener">
+              universalgreenfields.nl
+            </a>
+            <br />
+            Mail:
+            <a href="mailto:info@universalgreenfields.nl">
+              info@universalgreenfields.nl
+            </a>
+            <br />
+            KvK: 28105541
+            <br />
+          </p>
         </div>
       </div>
-    </div>
-    <div class="row bottom footer">
-      <div class="full-row">
-        <div class="blocks-container">
-          <div class="block copyright">
-            <p>&copy; Universal Greenfields 2021</p>
-          </div>
-          <div class="block developed">
-            <p>Ontwikkeld door <span style="font-weight: 600">DIF</span></p>
-          </div>
-        </div>
+    </page-wrapper>
+    <page-wrapper class="section copyright">
+      <div class="content">
+        <span>&copy; Universal Greenfields 2021</span>
+        <span>Developed by <strong>DIF</strong></span>
       </div>
-    </div>
+    </page-wrapper>
   </footer>
 </template>
 
 <script>
+import PageWrapper from "./page-wrapper.vue"
+
 export default {
   name: "page-footer",
+  components: {
+    PageWrapper,
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.row {
-  &.top {
-    margin-top: 32px;
+@import "../vars.scss";
 
-    &.footer {
-      background-color: #6fcf97;
-      width: 100%;
-      float: left;
+footer {
+  margin-top: 32px;
+}
 
-      .full-row {
-        margin: 0 auto;
-        max-width: 960px;
-        .blocks-container {
-          .block-group {
-            &.content {
-              width: 100%;
+.section {
+  background: $accent;
+  padding: 32px 0;
 
-              .block {
-                &.left {
-                  float: left;
-                  color: #fff;
-                  margin-top: 90px;
-                  max-width: 50%;
+  &.copyright {
+    background: darken($accent, 10%);
+    padding: 16px 0;
+  }
+}
 
-                  h2 {
-                    margin: 0;
-                    width: 50%;
-                  }
-                }
+.content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+  align-items: center;
 
-                &.right {
-                  text-align: right;
-                  float: right;
-                  margin: 50px 0;
-                  max-width: 50%;
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
 
-                  h4 {
-                    margin: 0;
-                  }
-
-                  p {
-                    margin: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    & > *:last-child {
+      justify-self: end;
+      text-align: end;
     }
   }
-  &.bottom {
-    &.footer {
-      background-color: #57bc81;
-      width: 100%;
-      float: left;
+}
 
-      .full-row {
-        margin: 0 auto;
-        max-width: 960px;
-        .blocks-container {
-          .block {
-            &.copyright {
-              float: left;
-              margin: 10px 0;
-              color: #383737;
-              max-width: 50%;
-
-              p {
-                margin: 0;
-              }
-            }
-            &.developed {
-              float: right;
-              margin: 10px 0;
-              color: #383737;
-              max-width: 50%;
-
-              p {
-                margin: 0;
-              }
-            }
-          }
-        }
-      }
-    }
+.contact {
+  & a {
+    color: inherit;
   }
 }
 </style>
