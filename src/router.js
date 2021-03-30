@@ -1,51 +1,51 @@
 import { createRouter, createWebHistory } from "vue-router"
-import { store } from "../store"
+import { store } from "./store"
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("../views/home"),
+    component: () => import("./views/home"),
   },
   {
     path: "/debug",
     name: "debug",
-    component: () => import("../views/debug"),
+    component: () => import("./views/debug"),
   },
   {
     path: "/about",
     name: "about",
-    component: () => import("../views/about"),
+    component: () => import("./views/about"),
   },
   {
     path: "/login",
     name: "login",
-    component: () => import("../views/login"),
+    component: () => import("./views/login"),
   },
   {
     path: "/logout",
     name: "logout",
-    component: () => import("../views/logout"),
+    component: () => import("./views/logout"),
   },
   {
     path: "/register",
     name: "register",
-    component: () => import("../views/register"),
+    component: () => import("./views/register"),
   },
   {
     path: "/devices",
     name: "devices",
-    component: () => import("../views/devices"),
+    component: () => import("./views/devices"),
   },
   {
     path: "/devices/register",
     name: "register-device",
-    component: () => import("../views/register-device"),
+    component: () => import("./views/register-device"),
   },
   {
     path: "/devices/@:deviceId",
     name: "device-stats",
-    component: () => import("../views/device-stats"),
+    component: () => import("./views/device-stats"),
   },
 ]
 

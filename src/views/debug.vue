@@ -1,6 +1,9 @@
 <template>
   <page-wrapper>
     <h1>debug</h1>
+    <div>
+      <primary-button @click="openTestModal">open test modal</primary-button>
+    </div>
     test chart:
     <chart></chart>
     api status:
@@ -16,6 +19,9 @@ import { request } from "../request"
 import PageWrapper from "../components/page-wrapper"
 import PageFooter from "../components/page-footer"
 import Chart from "../components/chart.vue"
+import PrimaryButton from "../components/primary-button.vue"
+import TestModal from "./test-modal.vue"
+import { modalBus } from "../bus"
 
 export default {
   name: "debug",
@@ -23,6 +29,7 @@ export default {
     PageWrapper,
     PageFooter,
     Chart,
+    PrimaryButton,
   },
   data() {
     return {
@@ -32,6 +39,16 @@ export default {
   computed: {
     state() {
       return JSON.stringify(this.$store.state, undefined, 2)
+    },
+  },
+  methods: {
+    openTestModal() {
+      modalBus.emit("open", {
+        component: TestModal,
+        props: {
+          testProp: Math.random(),
+        },
+      })
     },
   },
   async mounted() {
