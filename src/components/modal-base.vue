@@ -24,12 +24,13 @@ export default {
   width: 100%;
   height: 100%;
 
-  background: rgba(0, 0, 0, 0.3);
+  background: white;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 .modal {
@@ -37,7 +38,7 @@ export default {
   padding: 24px;
   border-radius: 4px;
 
-  max-width: calc(100vw - 32px);
-  max-height: calc(100vh - 32px);
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
 }
 </style>
