@@ -33,21 +33,7 @@ def create_app():
             if app.config["ENV"] == "production"
             else ["http://localhost:8080"]
         ),
-        methods=["GET", "HEAD", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
-        expose_headers=[
-            "Cache-Control",
-            "Content-Language",
-            "Content-Length",
-            "Content-Type",
-            "Expires",
-            "Last-Modified",
-            "Pragma",
-        ],
-        allow_headers="*",
         supports_credentials=True,
-        max_age=timedelta(hours=1),
-        send_wildcard=False,
-        vary_header=False,
     )
 
     cors.init_app(app)
