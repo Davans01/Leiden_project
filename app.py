@@ -1,5 +1,6 @@
 import os
 import secrets
+from datetime import timedelta
 
 from flask import Flask
 from flask_cors import CORS
@@ -28,11 +29,25 @@ def create_app():
 
     cors = CORS(
         origins=(
-            "https://ugleiden.test"
+            ["https://ugleiden.test"]
             if app.config["ENV"] == "production"
-            else "http://localhost:8080"
+            else ["http://localhost:8080"]
         ),
+        methods=["GET", "HEAD", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
+        expose_headers=[
+            "Cache-Control",
+            "Content-Language",
+            "Content-Length",
+            "Content-Type",
+            "Expires",
+            "Last-Modified",
+            "Pragma",
+        ],
+        allow_headers="*",
         supports_credentials=True,
+        max_age=timedelta(hours=1),
+        send_wildcard=False,
+        vary_header=False,
     )
 
     cors.init_app(app)
