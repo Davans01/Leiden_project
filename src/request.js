@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.ugleiden.test"
+    ? "https://api.soilsenseeverywhere.nl"
     : "http://localhost:5000"
 
 export const request = async (url, data = undefined, headers = {}) => {

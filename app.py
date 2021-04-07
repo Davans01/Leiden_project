@@ -29,7 +29,7 @@ def create_app():
 
     cors = CORS(
         origins=(
-            ["https://ugleiden.test"]
+            ["https://soilsenseeverywhere.nl"]
             if app.config["ENV"] == "production"
             else ["http://localhost:8080"]
         ),
