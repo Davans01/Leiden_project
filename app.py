@@ -7,7 +7,7 @@ from flask_cors import CORS
 import api.bp.auth
 import api.bp.devices
 import api.bp.status
-import api.bp.tnn
+import api.bp.ttn
 import api.model.device
 import api.model.measure_type
 import api.model.measurement
@@ -46,6 +46,6 @@ def create_app():
     app.register_blueprint(api.bp.auth.blueprint)
     app.register_blueprint(api.bp.devices.blueprint)
     app.register_blueprint(api.bp.status.blueprint)
-    app.register_blueprint(api.bp.tnn.blueprint)
+    app.register_blueprint(api.bp.ttn.blueprint)
 
     return app
