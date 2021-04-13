@@ -1,3 +1,8 @@
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.soilsenseeverywhere.nl"
+    : "http://localhost:5000"
+
 export const request = async (url, data = undefined, headers = {}) => {
   const [method, path] = url.includes(" ") ? url.split(" ") : ["GET", url]
 
@@ -11,7 +16,7 @@ export const request = async (url, data = undefined, headers = {}) => {
 
   let response
   try {
-    response = await fetch(`http://localhost:5000${path}`, {
+    response = await fetch(baseUrl + path, {
       method,
       body: JSON.stringify(data),
       headers: requestHeaders,
