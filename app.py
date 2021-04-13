@@ -1,5 +1,6 @@
 import os
 import secrets
+from datetime import timedelta
 
 from flask import Flask
 from flask_cors import CORS
@@ -15,8 +16,6 @@ import api.model.user
 from api.database import db, migrate
 from api.login import login_manager
 
-cors = CORS(origins="http://localhost:8080", supports_credentials=True)
-
 
 def create_app():
     app = Flask(__name__)
@@ -27,6 +26,15 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SQLALCHEMY_ECHO"] = app.config["ENV"] != "production"
+
+    cors = CORS(
+        origins=(
+            ["https://soilsenseeverywhere.nl"]
+            if app.config["ENV"] == "production"
+            else ["http://localhost:8080"]
+        ),
+        supports_credentials=True,
+    )
 
     cors.init_app(app)
     db.init_app(app)
