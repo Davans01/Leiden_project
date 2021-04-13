@@ -27,7 +27,7 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SQLALCHEMY_ECHO"] = app.config["ENV"] != "production"
 
-    app.config["TNN_AUTH_KEY"] = os.getenv("TNN_AUTH_KEY")
+    app.config["TTN_AUTH_KEY"] = os.getenv("TTN_AUTH_KEY")
 
     cors = CORS(
         origins=(
