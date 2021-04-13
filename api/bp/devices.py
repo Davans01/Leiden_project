@@ -1,11 +1,8 @@
 from datetime import datetime, timedelta
-from random import randint
 
 from api.database import db
 from api.model.device import Device
-from api.model.measure_type import MeasureType
 from api.model.measurement import Measurement
-from api.model.measurement_row import MeasurementRow
 from flask import Blueprint, request
 from flask_login import current_user, login_required
 
