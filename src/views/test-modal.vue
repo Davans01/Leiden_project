@@ -25,7 +25,7 @@
 
             <div class="inner-block text">
 
-              <p>test</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             </div>
           </div>
@@ -92,11 +92,11 @@ export default {
   &.chart-modal{
 
     .full-row{
-      margin: 0 auto;
-      max-width: 1080px;
       padding: 0 35px;
       width: 100%;
       float: left;
+      margin: 0 auto;
+    max-width: 1320px;
 
       .blocks-container{
         
@@ -123,7 +123,8 @@ export default {
                 .inner-block{
 
                   &.chart{
-
+                    width: 50%;
+                    float: left;
                   }
                 }
               }
@@ -146,5 +147,14 @@ export default {
       }
     }
   }
+}
+.primary-button[data-v-5fddf8ed] {
+    background: #59c56b;
+    border-color: #59c56b;
+    color: #070807;
+    float: right;
+    position: absolute;
+    top: 30px;
+    right: 320px;
 }
 </style>
