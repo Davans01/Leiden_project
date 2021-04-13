@@ -23,8 +23,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 
-  background: white;
 
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@ export default {
   padding: 24px;
   border-radius: 4px;
 
-  width: calc(100vw - 32px);
+  width: 1320px;
   height: calc(100vh - 32px);
 }
 </style>
