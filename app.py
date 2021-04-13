@@ -1,6 +1,5 @@
 import os
 import secrets
-from datetime import timedelta
 
 from flask import Flask
 from flask_cors import CORS
@@ -8,6 +7,7 @@ from flask_cors import CORS
 import api.bp.auth
 import api.bp.devices
 import api.bp.status
+import api.bp.tnn
 import api.model.device
 import api.model.measure_type
 import api.model.measurement
@@ -27,6 +27,8 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SQLALCHEMY_ECHO"] = app.config["ENV"] != "production"
 
+    app.config["TNN_AUTH_KEY"] = os.getenv("TNN_AUTH_KEY")
+
     cors = CORS(
         origins=(
             ["https://soilsenseeverywhere.nl"]
@@ -44,5 +46,6 @@ def create_app():
     app.register_blueprint(api.bp.auth.blueprint)
     app.register_blueprint(api.bp.devices.blueprint)
     app.register_blueprint(api.bp.status.blueprint)
+    app.register_blueprint(api.bp.tnn.blueprint)
 
     return app
