@@ -33,7 +33,7 @@
             </div>
 
             <div class="block graphs-home">
-              <primary-button @click="openTestModal2">
+              <primary-button @click="openTestModal3">
                 <a class="modal-test">
                 <img src="../../src/assets/test.jpg" />
                   <p>Grafiek 3</p>
@@ -42,7 +42,7 @@
             </div>
 
             <div class="block graphs-home">
-              <primary-button @click="openTestModal2">
+              <primary-button @click="openTestModal4">
                 <a class="modal-test">
                 <img src="../../src/assets/test.jpg" />
                   <p>Grafiek 4</p>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="block graphs-home">
-              <primary-button @click="openTestModal2">
+              <primary-button @click="openTestModal5">
                 <a class="modal-test">
                 <img src="../../src/assets/test.jpg" />
                   <p>Grafiek 5</p>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="block graphs-home">
-              <primary-button @click="openTestModal2">
+              <primary-button @click="openTestModal6">
                 <a class="modal-test">
                 <img src="../../src/assets/test.jpg" />
                   <p>Grafiek 6</p>
@@ -81,6 +81,10 @@ import PageFooter from "../components/page-footer.vue"
 import PageWrapper from "../components/page-wrapper.vue"
 import TestModal from "./test-modal.vue"
 import TestModal2 from "./test-modal2.vue"
+import TestModal3 from "./test-modal3.vue"
+import TestModal4 from "./test-modal4.vue"
+import TestModal5 from "./test-modal5.vue"
+import TestModal6 from "./test-modal6.vue"
 import { modalBus } from "../bus"
 export default {
   name: "device-stats",
@@ -120,6 +124,38 @@ export default {
        openTestModal2() {
       modalBus.emit("open", {
         component: TestModal2,
+        props: {
+          testProp: Math.random(),
+        },
+      })
+    },
+           openTestModal3() {
+      modalBus.emit("open", {
+        component: TestModal3,
+        props: {
+          testProp: Math.random(),
+        },
+      })
+    },
+               openTestModal4() {
+      modalBus.emit("open", {
+        component: TestModal4,
+        props: {
+          testProp: Math.random(),
+        },
+      })
+    },
+               openTestModal5() {
+      modalBus.emit("open", {
+        component: TestModal5,
+        props: {
+          testProp: Math.random(),
+        },
+      })
+    },
+               openTestModal6() {
+      modalBus.emit("open", {
+        component: TestModal6,
         props: {
           testProp: Math.random(),
         },

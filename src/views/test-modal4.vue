@@ -1,7 +1,7 @@
 <template>
     <modal-base>
 
-    <div class="row chart-modal-6">
+    <div class="row chart-modal-4">
 
     <div class="full-row">
 
@@ -9,7 +9,7 @@
               <primary-button @click="close">close</primary-button>
 
         <div class="block title">
-          <h1>Grafiek 6</h1>
+          <h1>Grafiek 4</h1>
         </div>
         
         <div class="block-group content">
@@ -46,7 +46,7 @@ import PrimaryButton from "../components/primary-button.vue"
 import Chart from "../components/chart.vue"
 
 export default {
-  name: "test-modal2",
+  name: "test-modal4",
   components: {
     ModalBase,
     PrimaryButton,
@@ -55,13 +55,13 @@ export default {
   data() {
     return {
       options: {
-        type: "line",
+        type: "pie",
         data: {
           labels: ["12pm", "1pm", "2pm", "3pm", "4pm", "5pm"],
           datasets: [
             {
               label: "# of Votes",
-              data: [1, 100, 69, 32, 10, 24],
+              data: [53, 3, 40, 3, 1, 24],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
@@ -131,7 +131,7 @@ export default {
 
 .row{
   width: 100%;
-  &.chart-modal-6{
+  &.chart-modal-4{
 
     .full-row{
       padding: 0 35px;
