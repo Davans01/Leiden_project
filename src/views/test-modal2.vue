@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
     </modal-base>
 
 </template>
