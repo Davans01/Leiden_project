@@ -34,8 +34,7 @@
         </div>
       </div>
     </div>
-  </div>
-    </modal-base2>
+    </modal-base>
 
 </template>
 
