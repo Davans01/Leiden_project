@@ -17,6 +17,16 @@ export const auth = {
     },
   },
   actions: {
+    async fetchSelf(context) {
+      const { ok, data } = await request("POST /auth/me")
+
+      if (ok) {
+        context.commit("setAuthUserData", data)
+      } else {
+        context.commit("setAuthUserData", null)
+      }
+    },
+
     async login(context, requestData) {
       const { ok, data } = await request("POST /auth/login", requestData)
 
