@@ -1,6 +1,7 @@
 import os
 import secrets
 
+from dotenv import load_dotenv
 from flask import Flask
 from flask_cors import CORS
 
@@ -18,6 +19,8 @@ from api.login import login_manager
 
 
 def create_app():
+    load_dotenv()
+
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
     if not app.config["SECRET_KEY"]:
