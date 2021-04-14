@@ -29,10 +29,19 @@
                 </a>
               </primary-button>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+  
+    <!-- <chart></chart> -->
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
   </page-wrapper>
   <page-footer></page-footer>
 </template>
@@ -42,6 +51,10 @@
 <script>
 import PageWrapper from "../components/page-wrapper"
 import PageFooter from "../components/page-footer"
+<<<<<<< HEAD
+=======
+// import Chart from "../components/chart.vue"
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
 import TestModal from "./test-modal.vue"
 import TestModal2 from "./test-modal2.vue"
 import { modalBus } from "../bus"
@@ -53,6 +66,10 @@ export default {
   components: {
     PageWrapper,
     PageFooter,
+<<<<<<< HEAD
+=======
+    // Chart,
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
   },
   data() {
     return {
@@ -170,8 +187,13 @@ export default {
     margin-left: 0;
 }
 .row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+2) {
+<<<<<<< HEAD
+=======
+    // margin-right: 15px;
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
     margin-left: 15px;
 }
+
 .row.home-charts .full-row .blocks-container .block-group.content > .graphs-home {
     width: calc(50% - 15px);
 }

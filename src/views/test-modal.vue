@@ -152,5 +152,17 @@ export default {
     }
   }
 }
+<<<<<<< HEAD
 
+=======
+.primary-button[data-v-5fddf8ed] {
+    background: #59c56b;
+    border-color: #59c56b;
+    color: #070807;
+    float: right;
+    position: absolute;
+    top: 30px;
+    right: 320px;
+}
+>>>>>>> 9f1116e68b1eee42ca04578d49d510faa6528bd6
 </style>
