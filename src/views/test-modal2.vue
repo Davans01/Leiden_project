@@ -1,5 +1,5 @@
 <template>
-    <modal-base2>
+    <modal-base>
 
     <div class="row chart-modal-2">
 
@@ -17,7 +17,7 @@
           <div class="block content-chart">
 
             <div class="inner-block chart">
-                  <chart2></chart2>
+                  <chart :options="options"></chart>
 
             </div>
 
@@ -41,19 +41,60 @@
 
 <script>
 import { modalBus } from "../bus"
-import ModalBase2 from "../components/modal-base2"
+import ModalBase from "../components/modal-base"
 import PrimaryButton from "../components/primary-button.vue"
-import Chart2 from "../components/chart2.vue"
+import Chart from "../components/chart.vue"
 
 export default {
   name: "test-modal2",
   components: {
-    ModalBase2,
+    ModalBase,
     PrimaryButton,
-    Chart2,
+    Chart,
   },
-  props: {
-    testProp: Number,
+  state() {
+    return {
+      options: {
+        type: "line",
+        data: {
+          labels: ["12pm", "1pm", "2pm", "3pm", "4pm", "5pm"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [53, 3, 40, 3, 1, 24],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      },
+    }
   },
   methods: {
     close() {
