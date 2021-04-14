@@ -52,7 +52,7 @@ export default {
     PrimaryButton,
     Chart,
   },
-  state() {
+  data() {
     return {
       options: {
         type: "doughnut",

@@ -34,6 +34,7 @@
         </div>
       </div>
     </div>
+    </div>
     </modal-base>
 
 </template>
@@ -51,7 +52,7 @@ export default {
     PrimaryButton,
     Chart,
   },
-  state() {
+  data() {
     return {
       options: {
         type: "line",
