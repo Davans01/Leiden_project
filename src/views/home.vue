@@ -22,56 +22,17 @@
             </div>
            
            <div class="block graphs-home">
-              <primary-button @click="openTestModal">
+              <primary-button @click="openTestModal2">
                 <a class="modal-test">
                 <img src="../../src/assets/test.jpg" />
                   <p>Grafiek 2</p>
                 </a>
               </primary-button>
             </div>
-
-            <div class="block graphs-home">
-              <primary-button @click="openTestModal">
-                <a class="modal-test">
-                <img src="../../src/assets/test.jpg" />
-                  <p>Grafiek 3</p>
-                </a>
-              </primary-button>
-            </div>
-
-            <div class="block graphs-home">
-              <primary-button @click="openTestModal">
-                <a class="modal-test">
-                <img src="../../src/assets/test.jpg" />
-                  <p>Grafiek 4</p>
-                </a>
-              </primary-button>
-            </div>
-
-            <div class="block graphs-home">
-              <primary-button @click="openTestModal">
-                <a class="modal-test">
-                <img src="../../src/assets/test.jpg" />
-                  <p>Grafiek 5</p>
-                </a>
-              </primary-button>
-            </div>
-
-          <div class="block graphs-home">
-              <primary-button @click="openTestModal">
-                <a class="modal-test">
-                <img src="../../src/assets/test.jpg" />
-                  <p>Grafiek 6</p>
-                </a>
-              </primary-button>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
-  
-    <chart></chart>
   </page-wrapper>
   <page-footer></page-footer>
 </template>
@@ -81,8 +42,8 @@
 <script>
 import PageWrapper from "../components/page-wrapper"
 import PageFooter from "../components/page-footer"
-import Chart from "../components/chart.vue"
 import TestModal from "./test-modal.vue"
+import TestModal2 from "./test-modal2.vue"
 import { modalBus } from "../bus"
 
 
@@ -92,7 +53,6 @@ export default {
   components: {
     PageWrapper,
     PageFooter,
-    Chart,
   },
   data() {
     return {
@@ -108,6 +68,14 @@ export default {
     openTestModal() {
       modalBus.emit("open", {
         component: TestModal,
+        props: {
+          testProp: Math.random(),
+        },
+      })
+    },
+       openTestModal2() {
+      modalBus.emit("open", {
+        component: TestModal2,
         props: {
           testProp: Math.random(),
         },
@@ -202,29 +170,10 @@ export default {
     margin-left: 0;
 }
 .row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+2) {
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+3) {
-    margin-right: 0px;
-    margin-left: 15px;
-}
-.row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+4) {
-    margin-left: 0px;
-    margin-right: 15px;
-}
-.row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+4) {
-    margin-right: 15px;
-    margin-left: 0px;
-}
-.row.home-charts .full-row .blocks-container .block-group.content > .graphs-home:nth-of-type(6n+6) {
-    margin-right: 0px;
     margin-left: 15px;
 }
 .row.home-charts .full-row .blocks-container .block-group.content > .graphs-home {
-    width: calc(33.3333333333% - 20px);
-    margin-right: 15px;
-    margin-left: 15px;
+    width: calc(50% - 15px);
 }
 
 </style>
