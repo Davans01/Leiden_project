@@ -1,20 +1,20 @@
 <template>
-  <canvas ref="canvas"></canvas>
+  <canvas ref="canvas2"></canvas>
 </template>
 
 <script>
 import Chart from "chart.js"
 
 export default {
-  name: "chart",
+  name: "chart2",
   state() {
     return {}
   },
   mounted() {
-    const context = this.$refs.canvas.getContext("2d")
+    const canvas2 = this.$refs.canvas2.getContext("2d")
 
-    this.chart = new Chart(context, {
-      type: "doughnut",
+    this.chart = new Chart(canvas2, {
+      type: "line",
       data: {
         labels: ["12pm", "1pm", "2pm", "3pm", "4pm", "5pm"],
         datasets: [

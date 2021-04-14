@@ -1,7 +1,7 @@
 <template>
-  <modal-base>
-  <!-- <p>{{ testProp }}</p> -->
-  <div class="row chart-modal">
+    <modal-base2>
+
+    <div class="row chart-modal-2">
 
     <div class="full-row">
 
@@ -9,7 +9,7 @@
               <primary-button @click="close">close</primary-button>
 
         <div class="block title">
-          <h1>Grafiek 1</h1>
+          <h1>Grafiek 2</h1>
         </div>
         
         <div class="block-group content">
@@ -17,8 +17,8 @@
           <div class="block content-chart">
 
             <div class="inner-block chart">
-              <chart></chart>
-              
+                  <chart2></chart2>
+
             </div>
 
           </div>
@@ -35,22 +35,22 @@
       </div>
     </div>
   </div>
-    </modal-base>
+    </modal-base2>
 
 </template>
 
 <script>
 import { modalBus } from "../bus"
-import ModalBase from "../components/modal-base"
+import ModalBase2 from "../components/modal-base2"
 import PrimaryButton from "../components/primary-button.vue"
-import Chart from "../components/chart.vue"
+import Chart2 from "../components/chart2.vue"
 
 export default {
-  name: "test-modal",
+  name: "test-modal2",
   components: {
-    ModalBase,
+    ModalBase2,
     PrimaryButton,
-    Chart,
+    Chart2,
   },
   props: {
     testProp: Number,
@@ -90,7 +90,7 @@ export default {
 
 .row{
   width: 100%;
-  &.chart-modal{
+  &.chart-modal-2{
 
     .full-row{
       padding: 0 35px;
@@ -152,4 +152,5 @@ export default {
     }
   }
 }
+
 </style>
