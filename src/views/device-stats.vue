@@ -46,7 +46,7 @@ export default {
   computed: {
     ...mapState({
       measureTypes(state) {
-        return state.config.measureTypes
+        return state.meta.measureTypes
       },
       device(state) {
         return (state.devices.devices || []).find(
