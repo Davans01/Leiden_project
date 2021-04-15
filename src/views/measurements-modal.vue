@@ -64,7 +64,12 @@ export default {
         type: "line",
         data: {
           labels: measurements.map((measurement) =>
-            new Date(measurement.timestamp).toLocaleString("en-US"),
+            new Date(measurement.timestamp).toLocaleString("en-GB", {
+              month: "short",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+            }),
           ),
           datasets: [
             {
