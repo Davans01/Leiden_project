@@ -18,7 +18,7 @@
               <primary-button @click="openMeasurementsModal(type)">
                 <a class="modal-test">
                   <img src="../../src/assets/test.jpg" />
-                  <p>Grafiek 1</p>
+                  <p>{{ type.label }}</p>
                 </a>
               </primary-button>
             </div>

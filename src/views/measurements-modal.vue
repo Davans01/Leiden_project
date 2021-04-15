@@ -6,7 +6,7 @@
           <primary-button @click="close">close</primary-button>
 
           <div class="block title">
-            <h1>Grafiek 1</h1>
+            <h1>{{ type.label }}</h1>
           </div>
 
           <div class="block-group content">
