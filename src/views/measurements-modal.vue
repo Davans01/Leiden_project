@@ -75,7 +75,8 @@ export default {
                     (row) => row.type === this.$props.type.id,
                   ),
                 )
-                .filter(Boolean),
+                .filter(Boolean)
+                .map((row) => row.value),
             },
           ],
         },
