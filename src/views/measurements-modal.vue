@@ -64,16 +64,10 @@ export default {
         type: "line",
         data: {
           labels: measurements.map((measurement) =>
-            new Date(measurement.timestamp).toLocaleString("en-GB", {
-              month: "short",
-              day: "numeric",
-              hour: "numeric",
-              minute: "numeric",
-            }),
+            new Date(measurement.timestamp).getTime(),
           ),
           datasets: [
             {
-              label: this.$props.type.unitName,
               data: measurements
                 .map((measurement) =>
                   measurement.rows.find(
@@ -82,18 +76,28 @@ export default {
                 )
                 .filter(Boolean)
                 .map((row) => row.value),
+              backgroundColor: "#59c56b40",
+              borderColor: "#59c56b",
             },
           ],
         },
         options: {
           responsive: true,
           legend: { display: false },
+          tooltips: {
+            callbacks: {
+              label: (item) => `${item.yLabel} ${this.$props.type.unitSymbol}`,
+            },
+          },
           scales: {
+            x: {
+              type: "time",
+              time: { unit: "minute" },
+            },
             y: {
-              display: true,
-              title: this.$props.type.dimensionName,
-              ticks: {
-                callback: (value) => value + this.$props.type.unitSymbol,
+              title: {
+                display: true,
+                text: this.$props.type.dimensionName,
               },
             },
           },
