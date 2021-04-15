@@ -58,7 +58,7 @@ export default {
   computed: {
     ...mapState({
       measurements(state) {
-        return state.devices.measurements[this.device.id]
+        return state.devices.measurements[this.$props.device.id]
       },
     }),
   },
@@ -72,13 +72,12 @@ export default {
           ),
           datasets: [
             {
-              label: this.type.unitName,
+              label: this.$props.type.unitName,
               data: this.measurements
                 .map((measurement) =>
                   measurement.rows.find((row) => row.type === this.type.id),
                 )
                 .filter(Boolean),
-              borderWidth: 2,
             },
           ],
         },
@@ -88,9 +87,9 @@ export default {
           scales: {
             y: {
               display: true,
-              title: this.type.dimensionName,
+              title: this.$props.type.dimensionName,
               ticks: {
-                callback: (value) => value + this.type.unitSymbol,
+                callback: (value) => value + this.$props.type.unitSymbol,
               },
             },
           },
