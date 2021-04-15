@@ -42,6 +42,7 @@ import { modalBus } from "../bus"
 import ModalBase from "../components/modal-base"
 import PrimaryButton from "../components/primary-button.vue"
 import Chart from "../components/chart.vue"
+import "chartjs-adapter-date-fns"
 
 export default {
   name: "measurements-modal",
@@ -63,9 +64,7 @@ export default {
       options: {
         type: "line",
         data: {
-          labels: measurements.map((measurement) =>
-            new Date(measurement.timestamp).getTime(),
-          ),
+          labels: measurements.map((measurement) => measurement.timestamp),
           datasets: [
             {
               data: measurements
