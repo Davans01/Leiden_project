@@ -1,7 +1,5 @@
 <template>
   <page-wrapper>
-    <pre>{{ JSON.stringify(device, undefined, 2) }}</pre>
-    <pre>{{ JSON.stringify(measurements, undefined, 2) }}</pre>
     <h1>home</h1>
     <div class="row home-charts">
       <div class="full-row">
