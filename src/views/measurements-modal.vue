@@ -42,7 +42,6 @@ import { modalBus } from "../bus"
 import ModalBase from "../components/modal-base"
 import PrimaryButton from "../components/primary-button.vue"
 import Chart from "../components/chart.vue"
-import { mapState } from "vuex"
 
 export default {
   name: "measurements-modal",
@@ -55,25 +54,20 @@ export default {
     device: Object,
     type: Object,
   },
-  computed: {
-    ...mapState({
-      measurements(state) {
-        return state.devices.measurements[this.$props.device.id]
-      },
-    }),
-  },
   data() {
+    const measurements = this.$state.devices.measurements[this.$props.device.id]
+
     return {
       options: {
         type: "line",
         data: {
-          labels: this.measurements.map((measurement) =>
+          labels: measurements.map((measurement) =>
             new Date(measurement.timestamp).toLocaleString("en-US"),
           ),
           datasets: [
             {
               label: this.$props.type.unitName,
-              data: this.measurements
+              data: measurements
                 .map((measurement) =>
                   measurement.rows.find((row) => row.type === this.type.id),
                 )
