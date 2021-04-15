@@ -55,7 +55,9 @@ export default {
     type: Object,
   },
   data() {
-    const measurements = this.$state.devices.measurements[this.$props.device.id]
+    const measurements = this.$store.state.devices.measurements[
+      this.$props.device.id
+    ]
 
     return {
       options: {
