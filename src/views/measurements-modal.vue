@@ -63,8 +63,8 @@ export default {
       options: {
         type: "line",
         data: {
-          labels: measurements.map((measurement) =>
-            new Date(measurement.timestamp).getTime(),
+          labels: measurements.map(
+            (measurement) => new Date(measurement.timestamp),
           ),
           datasets: [
             {
@@ -90,16 +90,23 @@ export default {
             },
           },
           scales: {
-            x: {
-              type: "time",
-              time: { unit: "minute" },
-            },
-            y: {
-              title: {
-                display: true,
-                text: this.$props.type.dimensionName,
+            xAxes: [
+              {
+                type: "time",
+                time: { unit: "minute", displayFormat: "MMM d HH:mm" },
               },
-            },
+            ],
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: this.$props.type.dimensionName,
+                },
+                ticks: {
+                  callback: (value) => value + this.$props.type.unitSymbol,
+                },
+              },
+            ],
           },
         },
       },
