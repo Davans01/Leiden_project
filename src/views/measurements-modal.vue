@@ -56,7 +56,7 @@ export default {
   },
   data() {
     const measurements = this.$store.state.devices.measurements[
-      this.$props.device.id
+      this.$props.device.serial
     ]
 
     return {
