@@ -2397,11 +2397,6 @@ chart.js@^2.9.4:
     chartjs-color "^2.1.0"
     moment "^2.10.2"
 
-chartjs-adapter-date-fns@^1.1.0-beta.1:
-  version "1.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/chartjs-adapter-date-fns/-/chartjs-adapter-date-fns-1.1.0-beta.1.tgz#5502dbfe33ff62af44ce6a05df086d1be773469a"
-  integrity sha512-VNhuZ86kXKOwh61CyRLP7hoFqAR7+gjnrtf7KYLt/Wfh3jIQs14l1h+nagtQoFaabIYIo6UD5/jJb2/J6zOPcw==
-
 chartjs-color-string@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz#1df096621c0e70720a64f4135ea171d051402f71"
