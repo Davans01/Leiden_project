@@ -71,7 +71,9 @@ export default {
               label: this.$props.type.unitName,
               data: measurements
                 .map((measurement) =>
-                  measurement.rows.find((row) => row.type === this.type.id),
+                  measurement.rows.find(
+                    (row) => row.type === this.$props.type.id,
+                  ),
                 )
                 .filter(Boolean),
             },
