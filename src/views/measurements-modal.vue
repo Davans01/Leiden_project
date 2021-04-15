@@ -93,7 +93,12 @@ export default {
             xAxes: [
               {
                 type: "time",
-                time: { unit: "minute", displayFormat: "MMM d HH:mm" },
+                time: {
+                  unit: "minute",
+                  displayFormat: {
+                    minute: "MMM d HH:mm",
+                  },
+                },
               },
             ],
             yAxes: [
