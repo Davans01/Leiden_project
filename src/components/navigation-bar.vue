@@ -13,17 +13,11 @@
         <li class="item">
           <router-link class="link" to="/devices">devices</router-link>
         </li>
-        <li class="item">
-          <router-link class="link" to="/about">about</router-link>
-        </li>
         <li class="item" v-if="!isAuthenticated">
           <router-link class="link" to="/login">login</router-link>
         </li>
         <li class="item" v-else>
           <router-link class="link" to="/logout">logout</router-link>
-        </li>
-        <li class="item">
-          <router-link class="link" to="/debug">debug</router-link>
         </li>
       </ul>
     </nav>
