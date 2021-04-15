@@ -95,7 +95,7 @@ export default {
                 type: "time",
                 time: {
                   unit: "minute",
-                  displayFormat: {
+                  displayFormats: {
                     minute: "MMM d HH:mm",
                   },
                 },
@@ -108,7 +108,8 @@ export default {
                   labelString: this.$props.type.dimensionName,
                 },
                 ticks: {
-                  callback: (value) => value + this.$props.type.unitSymbol,
+                  callback: (value) =>
+                    `${value} ${this.$props.type.unitSymbol}`,
                 },
               },
             ],
